@@ -53,6 +53,7 @@ authenticate(struct mstack *m)
     }
     fputs("User: ", tty);
     fflush(tty);
+    user[0] = 0;
     fgets(user, 32, tty);
 
     char *pass = mstack_alloc(m, 32);
@@ -60,6 +61,7 @@ authenticate(struct mstack *m)
     if (pass) {
         fputs("Password: ", tty);
         fflush(tty);
+        pass[0] = 0;
         fgets(pass, 32, tty);
         result = strcmp(user, pass) != 0;
     }
