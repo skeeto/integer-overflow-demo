@@ -72,7 +72,7 @@ authenticate(struct mstack *m)
 }
 
 void *
-naive_calloc(struct mstack *m, size_t nmemb, size_t size)
+naive_calloc(struct mstack *m, unsigned long nmemb, unsigned long size)
 {
     void *p = mstack_alloc(m, nmemb * size);
     if (p)
